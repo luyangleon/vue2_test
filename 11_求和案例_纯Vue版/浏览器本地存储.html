@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addStorage()">添加本地存储</button>
+    <button onclick="readStorage()">读取本地存储</button>
+    <button onclick="deleteStorage()">删除本地存储</button>
+    <button onclick="clearStorage()">清空本地存储</button>
+    <hr />
+    <button onclick="addSessionStorage()">添加Session存储</button>
+    <button onclick="readSessionStorage()">读取Session存储</button>
+    <button onclick="deleteSessionStorage()">删除Session存储</button>
+    <button onclick="clearSessionStorage()">清空Session存储</button>
+
+    <script type="text/javascript">
+        function addStorage() {
+            localStorage.setItem('name', 'luyang')
+            localStorage.setItem('age', '18')
+            localStorage.setItem('person', JSON.stringify({'name':'dfy',age:23,sex:'female'}))
+        }
+        function readStorage() {
+            console.log(localStorage.getItem('name'))
+            console.log(localStorage.getItem('age'))
+            console.log(JSON.parse(localStorage.getItem('person')))
+        }
+        function deleteStorage() {
+            localStorage.removeItem('name')
+        }
+        function clearStorage() {
+            localStorage.clear()
+        }
+
+        function addSessionStorage() {
+            sessionStorage.setItem('name', 'luyang')
+            sessionStorage.setItem('age', '18')
+            sessionStorage.setItem('person', JSON.stringify({'name':'dfy',age:23,sex:'female'}))
+        }
+        function readSessionStorage() {
+            console.log(sessionStorage.getItem('name'))
+            console.log(sessionStorage.getItem('age'))
+            console.log(JSON.parse(sessionStorage.getItem('person')))
+        }
+        function deleteSessionStorage() {
+            sessionStorage.removeItem('name')
+        }
+        function clearSessionStorage() {
+            sessionStorage.clear()
+        }
+    </script>
+</body>
+</html>
